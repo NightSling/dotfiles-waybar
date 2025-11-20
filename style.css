@@ -10,7 +10,7 @@
 
 /* transparent waybar background */
 #waybar {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   box-shadow: none;
   margin: 0;

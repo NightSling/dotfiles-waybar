@@ -50,13 +50,13 @@
   },
   "custom/reboot": {
     "format": "<span color='#FFD700'>  </span>",
-    "on-click": "systemctl reboot",
+    "on-click": "/home/daysling/.config/rofi/scripts/powermenu_t1",
     "tooltip": true,
     "tooltip-format": "Reboot",
   },
   "custom/power": {
     "format": "<span color='#FF4040'>  </span>",
-    "on-click": "systemctl poweroff",
+    "on-click": "/home/daysling/.config/rofi/scripts/powermenu_t1",
     "tooltip": true,
     "tooltip-format": "Shutdown",
   },
@@ -77,14 +77,11 @@
     "format": "<span color='#28CD41'> {icon} </span>{capacity}% ",
     "format-charging": " 󱐋{capacity}%",
     "interval": 1,
-    "format-icons": [
-      "󰂎",
-      "󰁼",
-      "󰁿",
-      "󰂁",
-      "󰁹"
-    ],
+    "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true,
+    "on-discharge-warning": "notify-send -u normal 'Low Battery' 'Battery at {capacity}%'",
+    "on-discharge-critical": "notify-send -u critical 'Critical Battery' 'Battery at {capacity}%'",
+    "on-update": "~/.config/waybar/scripts/battery_notify.sh",
   },
   "pulseaudio": {
     "format": "<span color='#00FF7F'>{icon}</span>{volume}% ",
